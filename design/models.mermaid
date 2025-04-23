@@ -1,0 +1,60 @@
+erDiagram
+
+    USERCARDPROGRESS {
+        int id
+        int box_level
+        datetime last_reviewed
+        datetime next_review_date
+        bool card_mastered
+        bool card_due_for_review
+    }
+    USERCARDPROGRESS }o--|| USER : "tracks for"
+    USERCARDPROGRESS }o--|| CARD : "progress on"
+
+    CARD {
+        int id
+        string anishinaabemowin
+        string english
+        string pronunciation
+        string subject
+        datetime date_created
+        datetime date_modified
+    }
+    
+    CARD }o--|| DECK : "belongs to"
+    
+    DECK {
+        int id
+        string name
+        string description
+        datetime date_created
+        datetime updated_at
+        bool is_public
+    }
+
+
+    
+    DECK }o--o| PROFILE : "chosen by"
+    DECK ||--o{ CARD : "has many"
+
+
+    PROFILE {
+        int id
+        string preferred_name
+        int study_streak
+        datetime created_at
+        datetime updated_at
+    }
+    PROFILE ||--|| USER : "builds on"
+    
+    USER {
+        int id
+        string username
+        string email
+    }
+
+
+
+
+
+

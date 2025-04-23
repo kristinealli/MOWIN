@@ -26,7 +26,7 @@ class UserCardProgress(models.Model):
 #Return True if the card is due for review, False otherwise.
     def due_for_review(self) -> bool:
         return timezone.now() >= self.next_review_date
-  
+        
     class Meta:
         unique_together = ['user', 'card']
         indexes = [

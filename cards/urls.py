@@ -52,7 +52,7 @@ urlpatterns = [
     # Study and Review paths
     path('study_session/<int:card_id>/', study_session, name='study_session'),
 
-    # Upload paths (staff only)
+    # Upload paths (admin only)
     path('deck/<int:deck_id>/upload/', upload_cards, name='upload-cards'),
     path('upload/', user_passes_test(staff_check)(upload_cards), name='upload-cards'),
     

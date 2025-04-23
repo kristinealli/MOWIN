@@ -2,7 +2,7 @@ flowchart TD
     Start[Start Session] --> FetchDueCards{Are there due cards?}
     FetchDueCards -->|Yes| ShowCard[Show Card Front]
     FetchDueCards -->|No| EndSession[End Session]
-    ShowCard --> UserAction[User selects "Show Answer"]
+    ShowCard --> UserAction[User selects Show Answer]
     UserAction --> Reveal[Reveal English]
     Reveal --> UserDecision{User knew answer?}
     UserDecision -->|Yes| Correct[Move Card up one Box]

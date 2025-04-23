@@ -1,0 +1,16 @@
+flowchart TD
+    Start[Start Session] --> FetchDueCards{Are there due cards?}
+    FetchDueCards -->|Yes| ShowCard[Show Card Front]
+    FetchDueCards -->|No| EndSession[End Session]
+    ShowCard --> UserAction[User selects "Show Answer"]
+    UserAction --> Reveal[Reveal English]
+    Reveal --> UserDecision{User knew answer?}
+    UserDecision -->|Yes| Correct[Move Card up one Box]
+    Correct --> UpdateNextReview[Update next_review_date]
+    UserDecision -->|No| Incorrect[Move Card to Box 1]
+    Incorrect --> ImmediateReview[Set immediate review date]
+    UpdateNextReview --> MoreCards{More cards due?}
+    ImmediateReview --> MoreCards
+    MoreCards -->|Yes| ShowCard
+    MoreCards -->|No| EndSession
+    EndSession --> Dashboard[Return to Dashboard]

@@ -1,0 +1,8 @@
+erDiagram
+    User ||--o{ UserCardProgress : "has"
+    User ||--|| Profile : "has"
+    Profile ||--o{ Deck : "selects"
+    Deck ||--o{ Card : "contains"
+    Profile ||--|| UserDeck : "owns"
+    UserDeck ||--o{ Card : "aggregates"
+    Card ||--o{ UserCardProgress : "tracks"

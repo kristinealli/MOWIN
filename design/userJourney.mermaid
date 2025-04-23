@@ -1,0 +1,8 @@
+graph TD
+    Signup["User Signup"] --> ProfileSetup["Set up Profile"]
+    ProfileSetup --> AddDecks["Select Decks"]
+    AddDecks --> Study["Start Study Session"]
+    Study --> Review["Review Cards"]
+    Review --> Track["Track Progress"]
+    Track --> Dashboard["Dashboard"]
+    Dashboard --> AddDecks

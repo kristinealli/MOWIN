@@ -75,7 +75,7 @@ class CustomUserCreationForm(UserCreationForm):
         if commit:
             user.save()
             # Get or create the user's profile and set preferred_name
-            profile = user.profile  # This works if you have the signal set up
+            profile = user.profile  
             profile.preferred_name = self.cleaned_data.get('preferred_name')
             profile.save()
         return user

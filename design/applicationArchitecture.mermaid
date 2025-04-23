@@ -1,0 +1,6 @@
+graph TD
+    Browser[User Browser] --> URLs[URL Dispatcher]
+    URLs --> Views[Views]
+    Views --> Templates[Templates + Forms]
+    Views --> Models[Models]
+    Models --> DB[(Database)]
